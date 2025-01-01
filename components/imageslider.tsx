@@ -28,9 +28,9 @@ export function ImagesSliderDemo() {
         }}
         className="z-50 flex flex-col justify-center items-center relative"
       >
-        <motion.p className="text-lg text-center text-neutral-200 mb-8">
+        {/* <motion.div className="text-lg text-center text-neutral-200 mb-8">
           <DockDemo/>
-        </motion.p>
+        </motion.div> */}
         <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4 mt-10">
           Explore the Beauty of Satara <br /> Your Next Adventure Awaits!
         </motion.p>
@@ -42,10 +42,10 @@ export function ImagesSliderDemo() {
         
         <Link
           href="/tourist-places"
-          className="px-4 py-2 backdrop-blur-sm border bg-emerald-300/10 border-emerald-500/20 text-white mx-auto text-center rounded-full relative mt-6"
+          className="px-4 py-2 backdrop-blur-sm border bg-orange-300/10 border-orange-500/20 text-white mx-auto text-center rounded-full relative mt-6"
         >
           <span>Start Your Journey →</span>
-          <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent" />
+          <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-orange-500 to-transparent" />
         </Link>
         
       </motion.div>

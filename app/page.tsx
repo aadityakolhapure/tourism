@@ -7,9 +7,24 @@ import InteractiveHoverButton from "@/components/ui/interactive-hover-button";
 import ShimmerButton from "@/components/ui/shimmer-button";
 import GridPattern from "@/components/ui/grid-pattern";
 import { cn } from "@/lib/utils";
-import {DockDemo} from "@/components/navbar";
+import { DockDemo } from "@/components/navbar";
+import Footer from "@/components/footer";
+import * as React from "react";
+import { Moon, MoonIcon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+
+// import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+
 
 export default function Home() {
+  const { setTheme } = useTheme();
   return (
     <div className="font-[family-name:var(--font-geist-sans)]">
       {/* <DockDemo/> */}
@@ -17,10 +32,12 @@ export default function Home() {
       <ImagesSliderDemo />
 
       {/* About Section */}
-      <div className="relative flex h-[500px] w-full flex-col items-center justify-center md:shadow-xl">
+      <div className="relative flex h-[500px] w-full flex-col items-center justify-center md:shadow-xl bg-[#fff] dark:bg-[#0b192c]">
         <section className="text-center">
-          <h2 className="text-4xl font-semibold mb-4">Welcome to Satara</h2>
-          <p className="text-lg text-neutral-700 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-semibold mb-4 text-white text-[#1e3e62] dark:text-[#1e3e92]">
+            Welcome to Satara
+          </h2>
+          <p className="text-lg text-neutral-700 max-w-2xl mx-auto dark:text-neutral-300">
             Satara is a picturesque city located in the heart of Maharashtra,
             India. Known for its scenic landscapes, serene waterfalls, and
             vibrant culture, Satara is an ideal destination for nature lovers
@@ -41,7 +58,7 @@ export default function Home() {
             [10, 15],
             [15, 10],
             [10, 15],
-            [15, 10]
+            [15, 10],
           ]}
           className={cn(
             "[mask-image:radial-gradient(200px_circle_at_center,white,transparent)]",
@@ -51,12 +68,12 @@ export default function Home() {
       </div>
 
       {/* Top Attractions Section */}
-      <section className="py-16 px-8 bg-white">
-        <h2 className="text-4xl font-semibold text-center mb-8">
+      <section className="py-16 px-8 bg-white dark:bg-neutral-900">
+        <h2 className="text-4xl font-semibold text-center mb-8 text-[#1e3e62] dark:text-[#1e3e92]">
           Top Attractions in Satara
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <Card className="shadow-md hover:scale-105 transition-transform">
+          <Card className="shadow-md hover:scale-105 transition-transform bg-white dark:bg-[#0a0a0a]">
             <div className="relative h-56">
               <Image
                 src="/images/dam.jpg" // Example image path
@@ -66,13 +83,15 @@ export default function Home() {
                 className="rounded-lg"
               />
             </div>
-            <p className="mt-4 text-xl font-medium pl-2">Koynanagar</p>
-            <p className="text-neutral-600 text-center p-1">
+            <p className="mt-4 text-xl font-medium pl-2 text-neutral-900 dark:bg-[#0a0a0a]">
+              Koynanagar
+            </p>
+            <p className="text-neutral-600 text-center p-1 dark:text-neutral-300">
               A beautiful spot near the Koyna Dam, known for its tranquil beauty
               and lush greenery.
             </p>
           </Card>
-          <Card className="shadow-md hover:scale-105 transition-transform">
+          <Card className="shadow-md hover:scale-105 transition-transform bg-white dark:bg-[#0a0a0a]">
             <div className="relative h-56">
               <Image
                 src="/images/kaas.jpg" // Example image path
@@ -82,13 +101,15 @@ export default function Home() {
                 className="rounded-lg"
               />
             </div>
-            <p className="mt-4 text-xl font-medium pl-2">Kas Plateau</p>
-            <p className="text-neutral-600 text-center p-1">
+            <p className="mt-4 text-xl font-medium pl-2 text-neutral-900 dark:text-neutral-100">
+              Kas Plateau
+            </p>
+            <p className="text-neutral-600 text-center p-1 dark:text-neutral-300">
               A UNESCO World Heritage site, famous for its seasonal flowers and
               rich biodiversity.
             </p>
           </Card>
-          <Card className="shadow-md hover:scale-105 transition-transform">
+          <Card className="shadow-md hover:scale-105 transition-transform bg-white dark:bg-[#0a0a0a]">
             <div className="relative h-56">
               <Image
                 src="/images/waterfall.jpg" // Example image path
@@ -98,10 +119,10 @@ export default function Home() {
                 className="rounded-lg"
               />
             </div>
-            <p className="mt-4 text-xl font-medium pl-2">
+            <p className="mt-4 text-xl font-medium pl-2 text-neutral-900 dark:text-neutral-100">
               Thoseghar Waterfalls
             </p>
-            <p className="text-neutral-600 text-center p-1">
+            <p className="text-neutral-600 text-center p-1 dark:text-neutral-300">
               A stunning waterfall, perfect for a peaceful getaway and
               photography.
             </p>
@@ -111,36 +132,40 @@ export default function Home() {
 
       {/* Tour Packages Section */}
       <section
-        className="py-16 px-8 bg-neutral-200 text-center relative bg-cover bg-center "
+        className="py-16 px-8 bg-neutral-200 dark:bg-neutral-800 text-center relative bg-cover bg-center"
         style={{ backgroundImage: 'url("/images/kaas.jpg")' }}
       >
         <div className="absolute inset-0 bg-black opacity-40 z-0"></div>
         <div className="relative z-10">
-          <h2 className="text-4xl font-semibold text-white mb-8">
+          <h2 className="text-4xl font-semibold text-[#fff] dark:text-[#2d5ede] mb-8">
             Exclusive Tour Packages
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="p-6 bg-white shadow-md hover:scale-105 transition-transform">
-              <p className="text-2xl font-semibold mb-4">Weekend Getaway</p>
-              <p className="text-neutral-600 mb-4">
+            <Card className="p-6 bg-white dark:bg-[#0b192c] shadow-md hover:scale-105 transition-transform">
+              <p className="text-2xl font-semibold mb-4 text-neutral-900 dark:text-neutral-100">
+                Weekend Getaway
+              </p>
+              <p className="text-neutral-600 mb-4 dark:text-neutral-300">
                 A 3-day tour to explore Satara’s best tourist spots, including
                 Kas Plateau, Koynanagar, and Thoseghar Waterfalls.
               </p>
               <InteractiveHoverButton text="Book" className="mt-4" />
             </Card>
-            <Card className="p-6 bg-white shadow-md hover:scale-105 transition-transform">
-              <p className="text-2xl font-semibold mb-4">Heritage Tour</p>
-              <p className="text-neutral-600 mb-4">
+            <Card className="p-6 bg-white dark:bg-[#0b192c] shadow-md hover:scale-105 transition-transform">
+              <p className="text-2xl font-semibold mb-4 text-neutral-900 dark:text-neutral-100">
+                Heritage Tour
+              </p>
+              <p className="text-neutral-600 mb-4 dark:text-neutral-300">
                 A heritage-focused tour covering Satara’s history, monuments,
                 and cultural experiences.
               </p>
               <InteractiveHoverButton text="Book" className="mt-4" />
             </Card>
-            <Card className="p-6 bg-white shadow-md hover:scale-105 transition-transform">
-              <p className="text-2xl font-semibold mb-4">
+            <Card className="p-6 bg-white dark:bg-[#0b192c] shadow-md hover:scale-105 transition-transform">
+              <p className="text-2xl font-semibold mb-4 text-neutral-900 dark:text-neutral-100">
                 Adventure Expedition
               </p>
-              <p className="text-neutral-600 mb-4">
+              <p className="text-neutral-600 mb-4 dark:text-neutral-300">
                 An adrenaline-packed tour, including trekking and outdoor
                 adventures around Satara’s picturesque landscapes.
               </p>
@@ -151,32 +176,44 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 px-8 bg-white text-center">
-        <h2 className="text-4xl font-semibold mb-8">What Our Visitors Say</h2>
+      <section className="py-16 px-8 bg-white dark:bg-neutral-900 text-center">
+        <h2 className="text-4xl font-semibold mb-8 text-neutral-900 dark:text-neutral-100">
+          What Our Visitors Say
+        </h2>
         <div className="flex flex-wrap justify-center gap-12">
-          <Card className="max-w-xs p-6 bg-neutral-100 rounded-lg shadow-md">
-            <p className="text-neutral-600 mb-4">
+          <Card className="max-w-xs p-6 bg-neutral-100 dark:bg-neutral-800 rounded-lg shadow-md">
+            <p className="text-neutral-600 mb-4 dark:text-neutral-300">
               "Satara is a hidden gem! The Kas Plateau is breathtaking, and the
               waterfalls are so serene. I highly recommend a visit!"
             </p>
-            <p className="font-semibold">Ravi Kumar</p>
-            <p className="text-neutral-500">Tourist from Pune</p>
+            <p className="font-semibold text-neutral-900 dark:text-neutral-100">
+              Ravi Kumar
+            </p>
+            <p className="text-neutral-500 dark:text-neutral-400">
+              Tourist from Pune
+            </p>
           </Card>
-          <Card className="max-w-xs p-6 bg-neutral-100 rounded-lg shadow-md">
-            <p className="text-neutral-600 mb-4">
+          <Card className="max-w-xs p-6 bg-neutral-100 dark:bg-neutral-800 rounded-lg shadow-md">
+            <p className="text-neutral-600 mb-4 dark:text-neutral-300">
               "The heritage tour gave me a deep insight into the culture of
               Satara. A fantastic way to learn about its rich history!"
             </p>
-            <p className="font-semibold">Aarti Deshmukh</p>
-            <p className="text-neutral-500">Tourist from Mumbai</p>
+            <p className="font-semibold text-neutral-900 dark:text-neutral-100">
+              Aarti Deshmukh
+            </p>
+            <p className="text-neutral-500 dark:text-neutral-400">
+              Tourist from Mumbai
+            </p>
           </Card>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-8 bg-neutral-100 text-center">
-        <h2 className="text-4xl font-semibold mb-4">Get in Touch</h2>
-        <p className="text-lg text-neutral-700 mb-6">
+      <section className="py-16 px-8 bg-neutral-100 dark:bg-neutral-800 text-center">
+        <h2 className="text-4xl font-semibold mb-4 text-neutral-900 dark:text-neutral-100">
+          Get in Touch
+        </h2>
+        <p className="text-lg text-neutral-700 mb-6 dark:text-neutral-300">
           Have questions about your visit to Satara? Reach out to us, and we’ll
           be happy to assist you!
         </p>
@@ -191,35 +228,30 @@ export default function Home() {
         </a>
       </section>
 
-      {/* Footer Section */}
-      <footer className="py-6 bg-neutral-800 text-white text-center">
-        <div className="flex justify-center gap-6">
-          <a
-            className="hover:underline"
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn
-          </a>
-          <a
-            className="hover:underline"
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Examples
-          </a>
-          <a
-            className="hover:underline"
-            href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Go to nextjs.org →
-          </a>
-        </div>
-      </footer>
+      <Footer />
+
+      <div className="fixed top-4 right-4 p-2">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" size="icon">
+              <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <DropdownMenuItem onClick={() => setTheme("light")}>
+              Light
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setTheme("dark")}>
+              Dark
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setTheme("system")}>
+              System
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     </div>
   );
 }
