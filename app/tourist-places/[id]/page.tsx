@@ -72,7 +72,7 @@ export default function PlacePage({ params }: { params: Promise<{ id: string }> 
 
   // Function to create Google Maps URL
   const getGoogleMapsUrl = (lat: number, lng: number) => {
-    return `https://www.google.com/maps/embed/v1/place?key=AIzaSyDFAAYTvIhvov-qve4Z0SGDnUQhLWrkvQE&q=${lat},${lng}`;
+    return `https://www.google.com/maps/embed/v1/place?key=hdfdsyf9er&q=${lat},${lng}`;
   };
 
   const FacilityCard = ({
