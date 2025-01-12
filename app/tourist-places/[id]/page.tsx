@@ -76,10 +76,6 @@ export default function PlacePage({
     );
   }
 
-  // Function to create Google Maps URL
-  const getGoogleMapsUrl = (lat: number, lng: number) => {
-    return `https://www.google.com/maps/embed/v1/place?key=AIzaSyDFAAYTvIhvov-qve4Z0SGDnUQhLWrkvQE&q=${lat},${lng}`;
-  };
 
   const FacilityCard = ({
     title,
