@@ -172,7 +172,7 @@ const touristPlaces: TouristPlace[] = [
   },
   {
     id: "8",
-    name: "Dholya Ganpati",
+    name: "Mahaganapati Temple",
     description:
       "A revered temple dedicated to Lord Ganesha, known for its massive idol and serene riverside location",
     category: "religious",

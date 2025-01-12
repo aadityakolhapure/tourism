@@ -12,6 +12,7 @@ import Footer from "@/components/footer";
 import * as React from "react";
 import { Moon, MoonIcon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import ChatGPTStyleBot from "@/components/ChatGPTStyleBot";
 
 // import { Button } from "@/components/ui/button"
 import {
@@ -20,8 +21,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
-
+// import { cn } from "@/lib/utils";
+import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
 
 export default function Home() {
   const { setTheme } = useTheme();
@@ -33,8 +34,8 @@ export default function Home() {
 
       {/* About Section */}
       <div className="relative flex h-[500px] w-full flex-col items-center justify-center md:shadow-xl bg-[#fff] dark:bg-[#0b192c]">
-        <section className="text-center">
-          <h2 className="text-4xl font-semibold mb-4 text-white text-[#1e3e62] dark:text-[#1e3e92]">
+        <section className="relative z-10 text-center p-4">
+          <h2 className="text-4xl font-semibold mb-4 text-[#1e3e62] dark:text-[#1e3e92]">
             Welcome to Satara
           </h2>
           <p className="text-lg text-neutral-700 max-w-2xl mx-auto dark:text-neutral-300">
@@ -57,12 +58,10 @@ export default function Home() {
             [15, 10],
             [10, 15],
             [15, 10],
-            [10, 15],
-            [15, 10],
           ]}
           className={cn(
-            "[mask-image:radial-gradient(200px_circle_at_center,white,transparent)]",
-            "inset-x-0 inset-y-[-40%] h-[200%] skew-y-12"
+            "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
+            "inset-x-0 inset-y-[-40%] h-[200%] skew-y-12 z-0"
           )}
         />
       </div>
@@ -209,23 +208,34 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-8 bg-neutral-100 dark:bg-neutral-800 text-center">
-        <h2 className="text-4xl font-semibold mb-4 text-neutral-900 dark:text-neutral-100">
+      <section className="bg-neutral-100 dark:bg-neutral-800 text-center relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+        {/* Heading */}
+        <h2 className="z-10 text-4xl font-semibold mb-4 text-neutral-900 dark:text-neutral-100">
           Get in Touch
         </h2>
-        <p className="text-lg text-neutral-700 mb-6 dark:text-neutral-300">
+
+        {/* Subheading */}
+        <p className="z-10 text-lg text-neutral-700 mb-6 dark:text-neutral-300">
           Have questions about your visit to Satara? Reach out to us, and we’ll
           be happy to assist you!
         </p>
-        <a href="mailto:contact@sataratourism.com">
-          <div className="z-10 flex items-center justify-center">
-            <ShimmerButton className="shadow-2xl">
-              <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                Contact Us
-              </span>
-            </ShimmerButton>
-          </div>
+
+        {/* Contact Us Button */}
+        <a href="#" className="z-10">
+          <ShimmerButton className="shadow-2xl px-6 py-3 rounded-lg bg-blue-500 hover:bg-blue-600 transition-colors">
+            <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg">
+              Contact Us
+            </span>
+          </ShimmerButton>
         </a>
+
+        {/* Background Interactive Grid Pattern */}
+        <InteractiveGridPattern
+          className={cn(
+            "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
+            "absolute inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
+          )}
+        />
       </section>
 
       <Footer />
