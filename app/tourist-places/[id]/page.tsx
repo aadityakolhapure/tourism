@@ -65,9 +65,9 @@ export default function PlacePage({
   if (!placeDetails) {
     return (
       <div className="min-h-screen dark:bg-[#0B192C] bg-gray-50 p-8 flex flex-col items-center justify-center text-white">
-        <h1 className="text-2xl font-bold mb-4">Place not found</h1>
+        <h1 className="text-2xl font-bold mb-4 text-orange-600">Place not found</h1>
         <Link href="/tourist-places">
-          <Button variant="outline" className="border-[#FF6500] text-[#FF6500]">
+          <Button variant="outline" className="border-[#FF6500] text-[#FF6500] hover:bg-[#FF6500] hover:text-white">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Places
           </Button>

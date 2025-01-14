@@ -148,7 +148,7 @@ export default function Home() {
                 A 3-day tour to explore Satara’s best tourist spots, including
                 Kas Plateau, Koynanagar, and Thoseghar Waterfalls.
               </p>
-              <InteractiveHoverButton text="Book" className="mt-4" />
+              <InteractiveHoverButton text="Book" className="mt-4 text-orange-500" />
             </Card>
             <Card className="p-6 bg-white dark:bg-[#0b192c] shadow-md hover:scale-105 transition-transform">
               <p className="text-2xl font-semibold mb-4 text-neutral-900 dark:text-neutral-100">
@@ -158,7 +158,7 @@ export default function Home() {
                 A heritage-focused tour covering Satara’s history, monuments,
                 and cultural experiences.
               </p>
-              <InteractiveHoverButton text="Book" className="mt-4" />
+              <InteractiveHoverButton text="Book" className="mt-4 text-orange-500" />
             </Card>
             <Card className="p-6 bg-white dark:bg-[#0b192c] shadow-md hover:scale-105 transition-transform">
               <p className="text-2xl font-semibold mb-4 text-neutral-900 dark:text-neutral-100">
@@ -168,7 +168,7 @@ export default function Home() {
                 An adrenaline-packed tour, including trekking and outdoor
                 adventures around Satara’s picturesque landscapes.
               </p>
-              <InteractiveHoverButton text="Book" className="mt-4" />
+              <InteractiveHoverButton text="Book" className="mt-4 text-orange-500" />
             </Card>
           </div>
         </div>

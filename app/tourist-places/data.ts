@@ -46,7 +46,7 @@ export const touristPlaces: PlaceDetails[] = [
     ],
     location: "Satara City, Maharashtra",
     visitingHours: "6:00 AM - 6:00 PM",
-    entryFee: "Rs. 20 per person",
+    entryFee: "Free",
     contactNumber: "+91 2162 234567",
     bestTimeToVisit: "October to February",
     nearbyFacilities: {

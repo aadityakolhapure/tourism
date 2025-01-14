@@ -404,7 +404,7 @@ export default function TouristPlaces() {
         <LoaderSkeleton />
       ) : (
         <div className="min-h-screen bg-neutral-50 p-8 dark:bg-[#0B192C]">
-          <div className="rounded-full h-8 w-8 mr-32 bg-[#000000] hover:bg-[#FF6500] hover:text-white text-white hover:bg-white">
+          <div className="rounded-full h-8 w-8 mr-32 bg-[#000000] hover:text-white text-white hover:bg-orange-500">
             <a href="/">
               <svg
                 className="w-8 h-8"
