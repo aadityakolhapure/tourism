@@ -207,35 +207,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="bg-neutral-100 dark:bg-neutral-800 text-center relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-        {/* Heading */}
-        <h2 className="z-10 text-4xl font-semibold mb-4 text-neutral-900 dark:text-neutral-100">
-          Get in Touch
-        </h2>
-
-        {/* Subheading */}
-        <p className="z-10 text-lg text-neutral-700 mb-6 dark:text-neutral-300">
-          Have questions about your visit to Satara? Reach out to us, and we’ll
-          be happy to assist you!
-        </p>
-
-        {/* Contact Us Button */}
-        <a href="#" className="z-10">
-          <ShimmerButton className="shadow-2xl px-6 py-3 rounded-lg bg-blue-500 hover:bg-blue-600 transition-colors">
-            <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg">
-              Contact Us
-            </span>
-          </ShimmerButton>
-        </a>
-
-        {/* Background Interactive Grid Pattern */}
-        <InteractiveGridPattern
-          className={cn(
-            "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
-            "absolute inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
-          )}
-        />
-      </section>
+    
 
       <Footer />
 

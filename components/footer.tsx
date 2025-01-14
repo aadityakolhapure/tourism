@@ -71,7 +71,7 @@ export default function Footer() {
               <li className="flex items-center space-x-2">
                 <span>✉️</span>{" "}
                 <a
-                  href="mailto:info@tourism.com"
+                  href="mailto:aadityakolhapure28@gmail.com"
                   className="hover:text-gray-300"
                 >
                   info@tourism.com
