@@ -12,7 +12,6 @@ import Footer from "@/components/footer";
 import * as React from "react";
 import { Moon, MoonIcon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import ChatGPTStyleBot from "@/components/ChatGPTStyleBot";
 
 // import { Button } from "@/components/ui/button"
 import {
