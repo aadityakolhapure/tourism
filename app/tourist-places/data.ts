@@ -38,7 +38,7 @@ export const touristPlaces: PlaceDetails[] = [
     shortDescription:
       "A historic fort offering panoramic views of Satara city, known for its military significance and architectural beauty.",
     category: "fort",
-    image: "/images/ajinkyatara.jpg",
+    image: "/images/Ajinkyatara.jpg",
     images: [
       "/images/ajinkyatara/gate.jpg",
       "/images/ajinkyatara/temple.jpg",
